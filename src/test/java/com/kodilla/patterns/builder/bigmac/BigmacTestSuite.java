@@ -20,8 +20,17 @@ public class BigmacTestSuite {
 
         //When
         int howManyIngredients = bigmac.getIngredients().size();
+        String sauce = bigmac.getSauce();
+        int howManyBurgers = bigmac.getBurgers();
 
         //Then
         Assert.assertEquals(4, howManyIngredients);
+        Assert.assertTrue(bigmac.getIngredients().contains("grilled pineapple"));
+        Assert.assertTrue(bigmac.getIngredients().contains("crispy bacon"));
+        Assert.assertTrue(bigmac.getIngredients().contains("whole leaf lettuce"));
+        Assert.assertEquals("dijonnaise", sauce);
+        Assert.assertEquals(2, howManyBurgers);
+        Assert.assertFalse(bigmac.isRollWithSezam());
+
     }
 }
